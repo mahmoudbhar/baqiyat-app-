@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <!-- خلفية التدرج الأخضر الفاخر -->
+    <radialGradient id="bgGradient" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#0E4233" />
+      <stop offset="60%" stop-color="#082A20" />
+      <stop offset="100%" stop-color="#041611" />
+    </radialGradient>
+
+    <!-- تدرج الذهبي الفخم مع إضاءة -->
+    <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFE79A" />
+      <stop offset="30%" stop-color="#FFAE34" />
+      <stop offset="65%" stop-color="#EDC967" />
+      <stop offset="90%" stop-color="#A27318" />
+      <stop offset="100%" stop-color="#734B03" />
+    </linearGradient>
+
+    <!-- تدرج ذهبي فاتح للإضاءة العليا -->
+    <linearGradient id="goldLight" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFF5D1" />
+      <stop offset="50%" stop-color="#E2B149" />
+      <stop offset="100%" stop-color="#8F610D" />
+    </linearGradient>
+
+    <!-- ظل لإعطاء مجسم للرموز والنصوص -->
+    <filter id="dropShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+
+    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- 1. الخلفية الإجمالية للأيقونة (حواف منحنية Squircle) -->
+  <rect width="512" height="512" rx="90" fill="url(#bgGradient)" />
+
+  <!-- الإطار الخارجي الذهبي الحافي -->
+  <rect x="8" y="8" width="496" height="496" rx="84" fill="none" stroke="url(#goldGradient)" stroke-width="8" opacity="0.9" />
+
+  <g filter="url(#dropShadow)">
+    <!-- 2. الإطار الدائري الذهبي المزدوج -->
+    <circle cx="256" cy="256" r="200" fill="none" stroke="url(#goldGradient)" stroke-width="7" />
+    <circle cx="256" cy="256" r="192" fill="none" stroke="url(#goldGradient)" stroke-width="2" opacity="0.6" />
+
+    <!-- 3. الهلال العلوي -->
+    <path d="M 256 90 A 22 22 0 1 0 274 116 A 18 18 0 1 1 256 90 Z" fill="url(#goldLight)" />
+
+    <!-- 4. كتابة كلمة "باقيات" بشكل صحيح وواضح -->
+    <g fill="url(#goldLight)">
+      <text x="256" y="225" 
+            font-family="'Amiri', 'Scheherazade New', 'Traditional Arabic', 'Dubai', serif" 
+            font-size="64" 
+            font-weight="bold" 
+            text-anchor="middle"
+            letter-spacing="2">بَاقِيَات</text>
+    </g>
+
+    <!-- 5. النص الفرعي: "صدقة جارية" مع الزخارف الجانبية -->
+    <g fill="url(#goldGradient)">
+      <!-- زخرفة يمين ويسار -->
+      <path d="M 165 278 L 180 278 L 172 273 Z" />
+      <circle cx="160" cy="278" r="2.5" />
+      <path d="M 347 278 L 332 278 L 340 273 Z" />
+      <circle cx="352" cy="278" r="2.5" />
+
+      <!-- نص صدقة جارية -->
+      <text x="256" y="283" font-family="'Amiri', 'Traditional Arabic', 'Scheherazade', serif" font-size="22" font-weight="bold" text-anchor="middle">صدقة جارية</text>
+    </g>
+
+    <!-- 6. قاعدة المصحف المفتوح (Book Base) -->
+    <g fill="url(#goldGradient)">
+      <!-- الصفحة اليسرى -->
+      <path d="M 256 430 C 210 400 150 400 120 390 C 115 388 120 378 130 380 C 160 388 215 390 256 415 Z" />
+      <path d="M 256 442 C 210 412 150 412 110 400 C 105 398 110 388 120 390 C 155 400 215 402 256 427 Z" opacity="0.8" />
+      
+      <!-- الصفحة اليمنى -->
+      <path d="M 256 430 C 302 400 362 400 392 390 C 397 388 392 378 382 380 C 352 388 297 390 256 415 Z" />
+      <path d="M 256 442 C 302 412 362 412 402 400 C 407 398 402 388 392 390 C 357 400 297 402 256 427 Z" opacity="0.8" />
+    </g>
+
+    <!-- 7. النبتة الذهبية النامية من المصحف -->
+    <!-- الساق -->
+    <path d="M 256 420 L 256 360" stroke="url(#goldLight)" stroke-width="5" stroke-linecap="round" />
+
+    <!-- الورقة اليسرى السفلية -->
+    <path d="M 256 390 C 230 385 205 330 205 330 C 205 330 240 340 256 375 Z" fill="url(#goldLight)" />
+    
+    <!-- الورقة اليمنى السفلية -->
+    <path d="M 256 390 C 282 385 307 330 307 330 C 307 330 272 340 256 375 Z" fill="url(#goldLight)" />
+
+    <!-- الورقة الوسطى العلوية -->
+    <path d="M 256 365 C 242 340 256 290 256 290 C 256 290 270 340 256 365 Z" fill="url(#goldLight)" />
+  </g>
+</svg>
